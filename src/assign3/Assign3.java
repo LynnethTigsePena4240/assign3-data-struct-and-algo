@@ -29,16 +29,38 @@ public class Assign3 {
         try(BufferedReader buff = new BufferedReader(new FileReader(file1)))
         {
             String line;
+            String[] parts;
             //read the file till the ends
             while ((line = buff.readLine()) != null)
             {
-                System.out.println(line);
-            }
+                //spliting each line into an array
+                parts = line.split(" ");
+                
+                String CustomerID = parts[0];
+                String FirstName = parts[1];
+                String LastName = parts[2];
+                String ProductID = parts[3];
+                String ProductName = parts[4];
+                String SingleItemPrice = parts[5];
+                String ItemsPurchased = parts[6];
+                
+                //printing for visual purposes can delete if not needed
+                System.out.println("CustomerID: " + parts[0]);
+                System.out.println("FirstName: " + parts[1]);
+                System.out.println("LastName: " + parts[2]);
+                System.out.println("ProductID: " + parts[3]);
+                System.out.println("ProductName: " + parts[4]);
+                System.out.println("SingleItemPrice: " + parts[5]);
+                System.out.println("ItemsPurchased: " + parts[6]);
+                System.out.println("=====================");
+               
+            }   
         }
         catch (FileNotFoundException e)
         {
             System.out.println("file not found: " + e);
         }
+        
     }
     
 }
