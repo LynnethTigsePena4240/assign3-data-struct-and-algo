@@ -82,7 +82,7 @@ public class Assign3 {
                 System.out.print("Enter Product Name: ");
                 String ProductName = input.nextLine();
 
-                System.out.print("Enter One  Price: ");
+                System.out.print("Enter One item's Price: ");
                 String SingleItemPrice = input.nextLine();
 
                 System.out.print("Enter Items Purchased: ");
