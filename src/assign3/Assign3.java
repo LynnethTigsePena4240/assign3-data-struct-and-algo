@@ -60,7 +60,47 @@ public class Assign3 {
         {
             System.out.println("file not found: " + e);
         }
-        
-    }
+            //User can choose if they want to insert a new sale record.
+            Scanner input = new Scanner(System.in);
+            System.out.print("Do you want to insert a new sale record? (yes or no): ");
+            String choice = input.nextLine();
+
+            //If user inputs "yes", let user insert information below.
+            if (choice.equalsIgnoreCase("yes")) {
+                System.out.print("Enter CustomerID: ");
+                String CustomerID = input.nextLine();
+
+                System.out.print("Enter First Name: ");
+                String FirstName = input.nextLine();
+
+                System.out.print("Enter Last Name: ");
+                String LastName = input.nextLine();
+
+                System.out.print("Enter ProductID: ");
+                String ProductID = input.nextLine();
+
+                System.out.print("Enter Product Name: ");
+                String ProductName = input.nextLine();
+
+                System.out.print("Enter One  Price: ");
+                String SingleItemPrice = input.nextLine();
+
+                System.out.print("Enter Items Purchased: ");
+                String ItemsPurchased = input.nextLine();
+
+            // appending the new record to the file
+                try (BufferedWriter writer = new BufferedWriter(new FileWriter(file1, true))) {
+                    writer.newLine();
+                    writer.write(CustomerID + " " + FirstName + " " + LastName + " " + ProductID + " " +
+                                ProductName + " " + SingleItemPrice + " " + ItemsPurchased);
+                    System.out.println("Record inserted successfully.");
+                } catch (IOException e) {
+                    System.out.println("Error writing to file: " + e);
+                }
+                //If user inputs "no", it prints this message.
+            } else {
+            System.out.println("No new record inserted to file.");
+        }
     
+    }
 }
