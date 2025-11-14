@@ -101,6 +101,7 @@ public class Assign3 {
             } else {
             System.out.println("No new record inserted to file.");
         }
-    
+        System.out.println("\nProcessing weekly totals...");
+        System.out.println("Weekly processing complete.");  
     }
 }
