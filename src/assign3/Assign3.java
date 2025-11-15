@@ -53,6 +53,12 @@ public class Assign3 {
                 System.out.println("SingleItemPrice: " + parts[5]);
                 System.out.println("ItemsPurchased: " + parts[6]);
                 System.out.println("=====================");
+                
+                int items = Integer.parseInt(ItemsPurchased);
+                double price = Double.parseDouble(SingleItemPrice);
+
+                Update.updateProduct(products, ProductID, ProductName, items);
+                Update.updateCustomer(customers, CustomerID, FirstName, LastName, price, items);
                
             }   
         }
@@ -99,9 +105,21 @@ public class Assign3 {
                 }
                 //If user inputs "no", it prints this message.
             } else {
-            System.out.println("No new record inserted to file.");
-        }
-        System.out.println("\nProcessing weekly totals...");
-        System.out.println("Weekly processing complete.");  
+                 System.out.println("No new record inserted to file.");
+            }
+
+                System.out.println("\nProcessing weekly totals...");
+
+                System.out.println("Customer Totals:");
+                for (Map.Entry<String, Integer> entry : customers.entrySet()) {
+                System.out.println("CustomerID: " + entry.getKey() + " | Total Bill: $" + entry.getValue());
+            }
+
+                System.out.println("\nProduct Totals:");
+                for (Map.Entry<String, Integer> entry : products.entrySet()) {
+                System.out.println("ProductID: " + entry.getKey() + " | Total Items Sold: " + entry.getValue());
+            }
+
+                System.out.println("Weekly processing complete.");
     }
 }
